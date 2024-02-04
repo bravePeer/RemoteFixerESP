@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="vieport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <style>
+            body {
+                text-align: center;
+            }
+            #consoleBox {
+                display: block;
+                text-align: left;
+                padding-left: 10px;
+                padding-right: 10px;
+                height: 600px;
+                width: 800px;
+                background-color:lightgray; 
+            }
+            #consoleContentBox {
+                display: block;
+                background-color: rgb(246, 245, 245); 
+                height: 85%;
+            }
+            #consoleContent {
+                display: block;
+                width: 100%;
+                height: 100%;
+                overflow-y: scroll; 
+                overflow-x: scroll; 
+            }
+            #consoleSendBox {
+                display: block;
+                height: fit-content;
+                margin-top: 5px;
+                padding: 5px;
+            }
+        </style>
+        <script>
+            function getUARTdata() {
+                const request = new XMLHttpRequest();
+                request.onreadystatechange = function() {
+                    if(this.status == 200) {
+                        let str = this.responseText;
+                        document.getElementById("consoleContent").innerHTML = this.responseText.replaceAll("\n", "<br>");
+                    }
+                }
+                request.open("POST", "/getUARTdata", true); 
+                request.responseType = "text";
+                request.send();   
+            }
+        </script>
+        <title>Remote Fixer ESP</title>
+    </head>
+    <body>
+        <h2>Remote Fixer ESP<br/></h3>
+        <div id="consoleBox">
+            <p style="padding-top: 5px;">UART respone:</p>
+            <div id="consoleContentBox">
+                <p id="consoleContent">
+                    <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce porta nibh massa, eu lacinia est tempor pellentesque. Nam dignissim, diam quis pellentesque viverra, risus velit tincidunt sapien, non pharetra quam nisl sit amet mauris. Mauris quis nisi rhoncus, molestie nulla vitae, ultrices mauris. Nullam dictum porta maximus. Cras felis orci, pulvinar et felis vitae, feugiat suscipit nunc. Nulla lobortis tortor sapien, et tincidunt tortor dapibus sed. Sed <br>ultricies dolor rutrum pellentesque suscipit. Mauris volutpat metus eleifend cursus consectetur. Vivamus scelerisque ex a tortor placerat vestibulum. Donec ex elit, volutpat eget metus id, pulvinar ornare sapien. Morbi <br>fringilla dapibus elit sit.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce porta nibh massa, eu lacinia est tempor pellentesque. Nam dignissim, diam quis pellentesque viverra, risus velit tincidunt sapien, non pharetra quam nisl sit amet mauris. Mauris quis nisi rhoncus, molestie nulla vitae, ultrices mauris. Nullam dictum porta maximus. Cras felis orci, pulvinar et felis vitae, feugiat suscipit nunc. Nulla lobortis tortor sapien, et tincidunt tortor dapibus sed. Sed <br>ultricies dolor rutrum pellentesque suscipit. Mauris volutpat metus eleifend cursus consectetur. Vivamus scelerisque ex a tortor placerat vestibulum. Donec ex elit, volutpat eget metus id, pulvinar ornare sapien. Morbi <br>fringilla dapibus elit sit.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce porta nibh massa, eu lacinia est tempor pellentesque. Nam dignissim, diam quis pellentesque viverra, risus velit tincidunt sapien, non pharetra quam nisl sit amet mauris. Mauris quis nisi rhoncus, molestie nulla vitae, ultrices mauris. Nullam dictum porta maximus. Cras felis orci, pulvinar et felis vitae, feugiat suscipit nunc. Nulla lobortis tortor sapien, et tincidunt tortor dapibus sed. Sed <br>ultricies dolor rutrum pellentesque suscipit. Mauris volutpat metus eleifend cursus consectetur. Vivamus scelerisque ex a tortor placerat vestibulum. Donec ex elit, volutpat eget metus id, pulvinar ornare sapien. Morbi <br>fringilla dapibus elit sit.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce porta nibh massa, eu lacinia est tempor pellentesque. Nam dignissim, diam quis pellentesque viverra, risus velit tincidunt sapien, non pharetra quam nisl sit amet mauris. Mauris quis nisi rhoncus, molestie nulla vitae, ultrices mauris. Nullam dictum porta maximus. Cras felis orci, pulvinar et felis vitae, feugiat suscipit nunc. Nulla lobortis tortor sapien, et tincidunt tortor dapibus sed. Sed <br>ultricies dolor rutrum pellentesquecerat vestibulum. Donec ex elit, volutpat eget metus id, pulvinar ornare sapien. Morbi <br>fringilla dapibus elit sit.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce porta nibh massa, eu lacinia est tempor pellentesque. Nam dignissim, diam quis pellentesque viverra, risus velit tincidunt sapien, non pharetra quam nisl sit amet mauris. Mauris quis nisi rhoncus, molestie nulla vitae, ultrices mauris. Nullam dictum porta maximus. Cras felis orci, pulvinar et felis vitae, feugiat suscipit nunc. Nulla lobortis tortor sapien, et tincidunt tortor dapibus sed. Sed <br>ultricies dolor rutrum pellentesque suscipit. Mauris volutpat metus eleifend cursus consectetur. Vivamus scelerisque ex a tortor placerat vestibulum. Donec ex elit, volutpat eget metus id, pulvinar ornare sapien. Morbi <br>fringilla dapibus elit sit.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce porta nibh massa, eu lacinia est tempor pellentesque. Nam dignissim, diam quis pellentesque viverra, risus velit tincidunt sapien, non pharetra quam nisl sit amet mauris. Mauris quis nisi rhoncus, molestie nulla vitae, ultrices mauris. Nullam dictum porta maximus. Cras felis orci, pulvinar et felis vitae, feugiat suscipit nunc. Nulla lobortis tortor sapien, et tincidunt tortor dapibus sed. Sed <br>ultricies dolor rutrum pellentesque suscipit. Mauris volutpat metus eleifend cursus consectetur. Vivamus scelerisque ex a tortor placerat vestibulum. Donec ex elit, volutpat eget metus id, pulvinar ornare sapien. Morbi <br>fringilla dapibus elit sit.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce porta nibh massa, eu lacinia est tempor pellentesque. Nam dignissim, diam quis pellentesque viverra, risus velit tincidunt sapien, non pharetra quam nisl sit amet mauris. Mauris quis nisi rhoncus, molestie nulla vitae, ultrices mauris. Nullam dictum porta maximus. Cras felis orci, pulvinar et felis vitae, feugiat suscipit nunc. Nulla lobortis tortor sapien, et tincidunt tortor dapibus sed. Sed <br>ultricies dolor rutrum pellentesquecerat vestibulum. Donec ex elit, volutpat eget metus id, pulvinar ornare sapien. Morbi <br>fringilla dapibus elit sit.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce porta nibh massa, eu lacinia est tempor pellentesque. Nam dignissim, diam quis pellentesque viverra, risus velit tincidunt sapien, non pharetra quam nisl sit amet mauris. Mauris quis nisi rhoncus, molestie nulla vitae, ultrices mauris. Nullam dictum porta maximus. Cras felis orci, pulvinar et felis vitae, feugiat suscipit nunc. Nulla lobortis tortor sapien, et tincidunt tortor dapibus sed. Sed <br>ultricies dolor rutrum pellentesque suscipit. Mauris volutpat metus eleifend cursus consectetur. Vivamus scelerisque ex a tortor placerat vestibulum. Donec ex elit, volutpat eget metus id, pulvinar ornare sapien. Morbi <br>fringilla dapibus elit sit.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce porta nibh massa, eu lacinia est tempor pellentesque. Nam dignissim, diam quis pellentesque viverra, risus velit tincidunt sapien, non pharetra quam nisl sit amet mauris. Mauris quis nisi rhoncus, molestie nulla vitae, ultrices mauris. Nullam dictum porta maximus. Cras felis orci, pulvinar et felis vitae, feugiat suscipit nunc. Nulla lobortis tortor sapien, et tincidunt tortor dapibus sed. Sed <br>ultricies dolor rutrum pellentesque suscipit. Mauris volutpat metus eleifend cursus consectetur. Vivamus scelerisque ex a tortor placerat vestibulum. Donec ex elit, volutpat eget metus id, pulvinar ornare sapien. Morbi <br>fringilla dapibus elit sit.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce porta nibh massa, eu lacinia est tempor pellentesque. Nam dignissim, diam quis pellentesque viverra, risus velit tincidunt sapien, non pharetra quam nisl sit amet mauris. Mauris quis nisi rhoncus, molestie nulla vitae, ultrices mauris. Nullam dictum porta maximus. Cras felis orci, pulvinar et felis vitae, feugiat suscipit nunc. Nulla lobortis tortor sapien, et tincidunt tortor dapibus sed. Sed <br>ultricies dolor rutrum pellentesquecerat vestibulum. Donec ex elit, volutpat eget metus id, pulvinar ornare sapien. Morbi <br>fringilla dapibus elit sit.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce porta nibh massa, eu lacinia est tempor pellentesque. Nam dignissim, diam quis pellentesque viverra, risus velit tincidunt sapien, non pharetra quam nisl sit amet mauris. Mauris quis nisi rhoncus, molestie nulla vitae, ultrices mauris. Nullam dictum porta maximus. Cras felis orci, pulvinar et felis vitae, feugiat suscipit nunc. Nulla lobortis tortor sapien, et tincidunt tortor dapibus sed. Sed <br>ultricies dolor rutrum pellentesque suscipit. Mauris volutpat metus eleifend cursus consectetur. Vivamus scelerisque ex a tortor placerat vestibulum. Donec ex elit, volutpat eget metus id, pulvinar ornare sapien. Morbi <br>fringilla dapibus elit sit.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce porta nibh massa, eu lacinia est tempor pellentesque. Nam dignissim, diam quis pellentesque viverra, risus velit tincidunt sapien, non pharetra quam nisl sit amet mauris. Mauris quis nisi rhoncus, molestie nulla vitae, ultrices mauris. Nullam dictum porta maximus. Cras felis orci, pulvinar et felis vitae, feugiat suscipit nunc. Nulla lobortis tortor sapien, et tincidunt tortor dapibus sed. Sed <br>ultricies dolor rutrum pellentesque suscipit. Mauris volutpat metus eleifend cursus consectetur. Vivamus scelerisque ex a tortor placerat vestibulum. Donec ex elit, volutpat eget metus id, pulvinar ornare sapien. Morbi <br>fringilla dapibus elit sit.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce porta nibh massa, eu lacinia est tempor pellentesque. Nam dignissim, diam quis pellentesque viverra, risus velit tincidunt sapien, non pharetra quam nisl sit amet mauris. Mauris quis nisi rhoncus, molestie nulla vitae, ultrices mauris. Nullam dictum porta maximus. Cras felis orci, pulvinar et felis vitae, feugiat suscipit nunc. Nulla lobortis tortor sapien, et tincidunt tortor dapibus sed. Sed <br>ultricies dolor rutrum pellentesque suscipit. Mauris volutpat metus eleifend cursus consectetur. Vivamus scelerisque ex a tortor placerat vestibulum. Donec ex elit, volutpat eget metus id, pulvinar ornare sapien. Morbi <br>fringilla dapibus elit sit. -->
+                </p>
+            </div>
+            <div id="consoleSendBox">
+                <input id="commandLine" type="text" name="command_line" style="width: 70%;" placeholder="Command line">
+                <input type="button" value="send UART data" onclick="getUARTdata()" />
+                <input type="button" value="get UART data" onclick="getUARTdata()" />
+            </div>
+        </div>
+    </body>
+</html>
